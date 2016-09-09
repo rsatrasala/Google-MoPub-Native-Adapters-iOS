@@ -60,21 +60,8 @@ static NSString *const adapterErrorDomain = @"com.mopub.mobileads.MoPubAdapter";
 
 @implementation GADMAdapterMoPub
 
-
-/// Array of GADNativeAdImage objects related to the advertised application.
-NSArray *_images;
-
 /// A set of strings representing loaded images.
 NSMutableDictionary *_imagesDictionary;
-
-/// Application icon.
-GADNativeAdImage *_icon;
-
-/// A set of string representing all native ad images.
-NSSet *_nativeAdImages;
-
-/// Serializes ivar usage.
-dispatch_queue_t _lockQueue;
 
 + (NSString *)adapterVersion {
   return @"1.0";
@@ -225,7 +212,6 @@ dispatch_queue_t _lockQueue;
         UIImage *image = [UIImage imageWithData:imageData];
         GADNativeAdImage *nativeAdImage = [[GADNativeAdImage alloc] initWithImage:image];
         if (nativeAdImage) {
-            _images = @[ nativeAdImage ];
             [strongSelf completedLoadingNativeAdImage:nativeAdImage imageKey:kAdMainImageKey];
         }
         });
@@ -239,7 +225,6 @@ dispatch_queue_t _lockQueue;
         UIImage *image = [UIImage imageWithData:imageData];
         GADNativeAdImage *nativeAdIcon = [[GADNativeAdImage alloc] initWithImage:image];
         if (nativeAdIcon) {
-            _icon = nativeAdIcon;
             [strongSelf completedLoadingNativeAdImage:nativeAdIcon imageKey:kAdIconImageKey];
         }
     });
@@ -268,6 +253,7 @@ dispatch_queue_t _lockQueue;
 
 }
 
+#pragma mark MPNativeAdDelegate Methods
 - (UIViewController *)viewControllerForPresentingModalView {
     return [self.connector viewControllerForPresentingModalView];
 }
