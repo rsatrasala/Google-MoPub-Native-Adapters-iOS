@@ -268,6 +268,10 @@ dispatch_queue_t _lockQueue;
 
 }
 
+- (UIViewController *)viewControllerForPresentingModalView {
+    return [self.connector viewControllerForPresentingModalView];
+}
+
 
 @end
 
