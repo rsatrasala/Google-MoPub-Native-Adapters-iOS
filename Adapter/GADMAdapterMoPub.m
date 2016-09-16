@@ -115,7 +115,7 @@ static NSString *const kAdapterErrorDomain = @"com.mopub.mobileads.MoPubAdapter"
 }
 
 - (void)interstitialDidFailToLoadAd:(MPInterstitialAdController *)interstitial {
-    NSError *adapterError = [NSError errorWithDomain:kAdapterErrorDomain code:0 userInfo:nil];
+    NSError *adapterError = [NSError errorWithDomain:kAdapterErrorDomain code:kGADErrorMediationNoFill userInfo:nil];
     [self.connector adapter:self didFailAd:adapterError];
 }
 
@@ -209,7 +209,7 @@ static NSString *const kAdapterErrorDomain = @"com.mopub.mobileads.MoPubAdapter"
             }
             else
             {
-                NSError *adapterError = [NSError errorWithDomain:kAdapterErrorDomain code:0 userInfo:nil];
+                NSError *adapterError = [NSError errorWithDomain:kAdapterErrorDomain code:kGADErrorReceivedInvalidResponse userInfo:nil];
                 [self.connector adapter:self didFailAd:adapterError];
                 
             }
@@ -292,12 +292,12 @@ static NSString *const kAdapterErrorDomain = @"com.mopub.mobileads.MoPubAdapter"
 
                                               } else {
                                                   NSLog(@"Failed to download images. Giving up for now.");
-                                                  NSError *adapterError = [NSError errorWithDomain:kAdapterErrorDomain code:0 userInfo:nil];
+                                                  NSError *adapterError = [NSError errorWithDomain:kAdapterErrorDomain code:kGADErrorNetworkError userInfo:nil];
                                                   [strongSelf.connector adapter:strongSelf didFailAd:adapterError];
                                               }
                                           } else {
                                               NSLog(@"MPNativeAd deallocated before loadImageForURL:intoImageView: download completion block was called");
-                                              NSError *adapterError = [NSError errorWithDomain:kAdapterErrorDomain code:0 userInfo:nil];
+                                              NSError *adapterError = [NSError errorWithDomain:kAdapterErrorDomain code:kGADErrorInternalError userInfo:nil];
                                               [strongSelf.connector adapter:strongSelf didFailAd:adapterError];
                                           }
                                       }];
