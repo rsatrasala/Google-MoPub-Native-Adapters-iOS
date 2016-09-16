@@ -132,17 +132,11 @@
     [_nativeAd performSelector:@selector(willAttachToView:) withObject:view];
 }
 
-- (void)mediatedNativeAdDidRecordImpression:(id<GADMediatedNativeAd>)mediatedNativeAd {
-  if (self.nativeAd) {
-  }
-}
-
 - (void)mediatedNativeAd:(id<GADMediatedNativeAd>)mediatedNativeAd
     didRecordClickOnAssetWithName:(NSString *)assetName
                              view:(UIView *)view
                    viewController:(UIViewController *)viewController {
   if (self.nativeAd) {
-      [_nativeAd performSelector:@selector(trackClick)];
       [_nativeAd performSelector:@selector(adViewTapped)];
   }
 }
