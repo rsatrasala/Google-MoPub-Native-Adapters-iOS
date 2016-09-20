@@ -157,8 +157,7 @@ static NSString *const kAdapterErrorDomain = @"com.mopub.mobileads.MoPubAdapter"
   MPStaticNativeAdRendererSettings *settings = [[MPStaticNativeAdRendererSettings alloc] init];
   
   MPNativeAdRendererConfiguration *config = [MPStaticNativeAdRenderer rendererConfigurationWithRendererSettings:settings];
-  NSString *moPubPublisherId = [self.connector credentials][@"ad_unit"]; // for facebook testing @"1ceee46ba9744155aed48ee6277ecbd6"; //
-    
+  NSString *moPubPublisherId = [self.connector credentials][@"ad_unit"];     
   MPNativeAdRequest *adRequest = [MPNativeAdRequest requestWithAdUnitIdentifier: moPubPublisherId rendererConfigurations:@[config]];
                                                 
   MPNativeAdRequestTargeting *targeting = [MPNativeAdRequestTargeting targeting];
