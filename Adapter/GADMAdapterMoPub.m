@@ -1,22 +1,3 @@
-    //
-// Copyright (C) 2015 Google, Inc.
-//
-// SampleAdapter.m
-// Sample Ad Network Adapter
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//      http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-//
-
 @import GoogleMobileAds;
 
 #import "GADMAdapterMoPub.h"
@@ -66,7 +47,6 @@ static NSString *const kAdapterErrorDomain = @"com.mopub.mobileads.MoPubAdapter"
 
 @implementation GADMAdapterMoPub
 
-/// A set of strings representing loaded images.
 
 + (NSString *)adapterVersion {
   return @"1.0";
@@ -157,7 +137,7 @@ static NSString *const kAdapterErrorDomain = @"com.mopub.mobileads.MoPubAdapter"
   MPStaticNativeAdRendererSettings *settings = [[MPStaticNativeAdRendererSettings alloc] init];
   
   MPNativeAdRendererConfiguration *config = [MPStaticNativeAdRenderer rendererConfigurationWithRendererSettings:settings];
-  NSString *moPubPublisherId = [self.connector credentials][@"ad_unit"];     
+  NSString *moPubPublisherId = [self.connector credentials][@"ad_unit"];
   MPNativeAdRequest *adRequest = [MPNativeAdRequest requestWithAdUnitIdentifier: moPubPublisherId rendererConfigurations:@[config]];
                                                 
   MPNativeAdRequestTargeting *targeting = [MPNativeAdRequestTargeting targeting];
@@ -172,7 +152,8 @@ static NSString *const kAdapterErrorDomain = @"com.mopub.mobileads.MoPubAdapter"
           self.nativeAd = response;
           self.nativeAd.delegate = self;
       
-          if(options!=nil){
+          //---- update to include the check for GADNativeAdImageAdLoaderOptions --- rupa
+          if(options!=nil && [options isKindOfClass:[GADNativeAdImageAdLoaderOptions class]]){
     
               for (GADNativeAdImageAdLoaderOptions *imageOptions in options) {
                   
@@ -181,6 +162,8 @@ static NSString *const kAdapterErrorDomain = @"com.mopub.mobileads.MoPubAdapter"
                   {
                       _mediatedAd = [[MoPubAdapterMediatedNativeAd alloc] initWithMoPubNativeAd:self.nativeAd mappedImages:nil];
                       [self.connector adapter:self didReceiveMediatedNativeAd:_mediatedAd];
+                      //--return is added-- rupa
+                      return;
                   }
               }
           }
@@ -210,10 +193,14 @@ static NSString *const kAdapterErrorDomain = @"com.mopub.mobileads.MoPubAdapter"
             {
                 NSError *adapterError = [NSError errorWithDomain:kAdapterErrorDomain code:kGADErrorReceivedInvalidResponse userInfo:nil];
                 [self.connector adapter:self didFailAd:adapterError];
-                
+                //--return is added-- rupa
+                return;
             }
         }
     }
+    
+    //--- In case of invalid response error, no need to call precacheImagesWithURL. --- @hayub
+    // This is not called in case of else. Its only called if imageURLs is successfully added - @rupa
     
     [self precacheImagesWithURL:imageURLs];
     
@@ -257,7 +244,6 @@ static NSString *const kAdapterErrorDomain = @"com.mopub.mobileads.MoPubAdapter"
             [_imagesDictionary setObject:nativeAdImage forKey:[self returnImageKey:imageURL.absoluteString]];
 
         }
-        
        
     }
     
@@ -293,18 +279,20 @@ static NSString *const kAdapterErrorDomain = @"com.mopub.mobileads.MoPubAdapter"
                                                   NSLog(@"Failed to download images. Giving up for now.");
                                                   NSError *adapterError = [NSError errorWithDomain:kAdapterErrorDomain code:kGADErrorNetworkError userInfo:nil];
                                                   [strongSelf.connector adapter:strongSelf didFailAd:adapterError];
+                                                  return;
                                               }
                                           } else {
                                               NSLog(@"MPNativeAd deallocated before loadImageForURL:intoImageView: download completion block was called");
                                               NSError *adapterError = [NSError errorWithDomain:kAdapterErrorDomain code:kGADErrorInternalError userInfo:nil];
                                               [strongSelf.connector adapter:strongSelf didFailAd:adapterError];
+                                              return;
                                           }
                                       }];
+    } else { //This block is called only if MPNativeCache already has the downloaded images. Else completion block is called where images are downloaded. Please let me know what you think. - rupa
+        _mediatedAd = [[MoPubAdapterMediatedNativeAd alloc] initWithMoPubNativeAd:self.nativeAd mappedImages:_imagesDictionary];
+        [self.connector adapter:self didReceiveMediatedNativeAd:_mediatedAd];
     }
 
-    _mediatedAd = [[MoPubAdapterMediatedNativeAd alloc] initWithMoPubNativeAd:self.nativeAd mappedImages:_imagesDictionary];
-    [self.connector adapter:self didReceiveMediatedNativeAd:_mediatedAd];
-   
 }
 
 #pragma mark MPNativeAdDelegate Methods
