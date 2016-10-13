@@ -9,16 +9,8 @@
 /* Begin PBXBuildFile section */
 		26D0565A1BBC859D002286F4 /* MoPubAdapterMediatedNativeAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D056581BBC859D002286F4 /* MoPubAdapterMediatedNativeAd.m */; };
 		26E462EB1B87BFDB00D2C50F /* GADMAdapterMoPub.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E462EA1B87BFDB00D2C50F /* GADMAdapterMoPub.m */; };
-		26E462FA1B87BFF800D2C50F /* SampleAdRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E462F31B87BFF800D2C50F /* SampleAdRequest.m */; };
-		26E462FB1B87BFF800D2C50F /* SampleBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E462F51B87BFF800D2C50F /* SampleBanner.m */; };
-		26E462FC1B87BFF800D2C50F /* SampleInterstitial.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E462F81B87BFF800D2C50F /* SampleInterstitial.m */; };
-		26E463061B8911AD00D2C50F /* SampleNativeAdLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E463051B8911AD00D2C50F /* SampleNativeAdLoader.m */; };
-		26E4630A1B8916FA00D2C50F /* SampleNativeContentAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E463091B8916FA00D2C50F /* SampleNativeContentAd.m */; };
-		26E4630D1B89170900D2C50F /* SampleNativeAppInstallAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E4630C1B89170900D2C50F /* SampleNativeAppInstallAd.m */; };
-		26E463101B8AEA2800D2C50F /* SampleNativeAdRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E4630F1B8AEA2800D2C50F /* SampleNativeAdRequest.m */; };
-		442031F61D52787C00682669 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 442031EC1D52787C00682669 /* GoogleMobileAds.framework */; };
-		442031F71D52787C00682669 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 442031F41D52787C00682669 /* README.txt */; };
-		442031F81D52787C00682669 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 442031F51D52787C00682669 /* README.txt */; };
+		4419719A1DAF4D7700C48499 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 441971911DAF4D7700C48499 /* GoogleMobileAds.framework */; };
+		4419719B1DAF4D7700C48499 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 441971991DAF4D7700C48499 /* README.txt */; };
 		44E3F8B21D5D4C4A00669B97 /* FacebookBannerCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E3F8AB1D5D4C4A00669B97 /* FacebookBannerCustomEvent.m */; };
 		44E3F8B31D5D4C4A00669B97 /* FacebookInterstitialCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E3F8AD1D5D4C4A00669B97 /* FacebookInterstitialCustomEvent.m */; };
 		44E3F8B41D5D4C4A00669B97 /* FacebookNativeAdAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E3F8AF1D5D4C4A00669B97 /* FacebookNativeAdAdapter.m */; };
@@ -221,32 +213,14 @@
 		26E462B21B8693F600D2C50F /* MediationExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediationExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26E462E91B87BFDB00D2C50F /* GADMAdapterMoPub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADMAdapterMoPub.h; path = Adapter/GADMAdapterMoPub.h; sourceTree = "<group>"; };
 		26E462EA1B87BFDB00D2C50F /* GADMAdapterMoPub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GADMAdapterMoPub.m; path = Adapter/GADMAdapterMoPub.m; sourceTree = "<group>"; };
-		26E462F21B87BFF800D2C50F /* SampleAdRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SampleAdRequest.h; path = SDK/SampleAdRequest.h; sourceTree = "<group>"; };
-		26E462F31B87BFF800D2C50F /* SampleAdRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SampleAdRequest.m; path = SDK/SampleAdRequest.m; sourceTree = "<group>"; };
-		26E462F41B87BFF800D2C50F /* SampleBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SampleBanner.h; path = SDK/SampleBanner.h; sourceTree = "<group>"; };
-		26E462F51B87BFF800D2C50F /* SampleBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SampleBanner.m; path = SDK/SampleBanner.m; sourceTree = "<group>"; };
-		26E462F61B87BFF800D2C50F /* SampleBannerAdDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SampleBannerAdDelegate.h; path = SDK/SampleBannerAdDelegate.h; sourceTree = "<group>"; };
-		26E462F71B87BFF800D2C50F /* SampleInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SampleInterstitial.h; path = SDK/SampleInterstitial.h; sourceTree = "<group>"; };
-		26E462F81B87BFF800D2C50F /* SampleInterstitial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SampleInterstitial.m; path = SDK/SampleInterstitial.m; sourceTree = "<group>"; };
-		26E462F91B87BFF800D2C50F /* SampleInterstitialAdDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SampleInterstitialAdDelegate.h; path = SDK/SampleInterstitialAdDelegate.h; sourceTree = "<group>"; };
-		26E463041B8911AD00D2C50F /* SampleNativeAdLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SampleNativeAdLoader.h; path = SDK/SampleNativeAdLoader.h; sourceTree = "<group>"; };
-		26E463051B8911AD00D2C50F /* SampleNativeAdLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SampleNativeAdLoader.m; path = SDK/SampleNativeAdLoader.m; sourceTree = "<group>"; };
-		26E463071B89163200D2C50F /* SampleNativeAdLoaderDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SampleNativeAdLoaderDelegate.h; path = SDK/SampleNativeAdLoaderDelegate.h; sourceTree = "<group>"; };
-		26E463081B8916FA00D2C50F /* SampleNativeContentAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SampleNativeContentAd.h; path = SDK/SampleNativeContentAd.h; sourceTree = "<group>"; };
-		26E463091B8916FA00D2C50F /* SampleNativeContentAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SampleNativeContentAd.m; path = SDK/SampleNativeContentAd.m; sourceTree = "<group>"; };
-		26E4630B1B89170900D2C50F /* SampleNativeAppInstallAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SampleNativeAppInstallAd.h; path = SDK/SampleNativeAppInstallAd.h; sourceTree = "<group>"; };
-		26E4630C1B89170900D2C50F /* SampleNativeAppInstallAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SampleNativeAppInstallAd.m; path = SDK/SampleNativeAppInstallAd.m; sourceTree = "<group>"; };
-		26E4630E1B8AEA2800D2C50F /* SampleNativeAdRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SampleNativeAdRequest.h; path = SDK/SampleNativeAdRequest.h; sourceTree = "<group>"; };
-		26E4630F1B8AEA2800D2C50F /* SampleNativeAdRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SampleNativeAdRequest.m; path = SDK/SampleNativeAdRequest.m; sourceTree = "<group>"; };
-		442031EC1D52787C00682669 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
-		442031EE1D52787C00682669 /* GADMAdNetworkAdapterProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADMAdNetworkAdapterProtocol.h; sourceTree = "<group>"; };
-		442031EF1D52787C00682669 /* GADMAdNetworkConnectorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADMAdNetworkConnectorProtocol.h; sourceTree = "<group>"; };
-		442031F01D52787C00682669 /* GADMediationAdRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADMediationAdRequest.h; sourceTree = "<group>"; };
-		442031F11D52787C00682669 /* GADMEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADMEnums.h; sourceTree = "<group>"; };
-		442031F21D52787C00682669 /* GADMRewardBasedVideoAdNetworkAdapterProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADMRewardBasedVideoAdNetworkAdapterProtocol.h; sourceTree = "<group>"; };
-		442031F31D52787C00682669 /* GADMRewardBasedVideoAdNetworkConnectorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADMRewardBasedVideoAdNetworkConnectorProtocol.h; sourceTree = "<group>"; };
-		442031F41D52787C00682669 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
-		442031F51D52787C00682669 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		441971911DAF4D7700C48499 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		441971931DAF4D7700C48499 /* GADMAdNetworkAdapterProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADMAdNetworkAdapterProtocol.h; sourceTree = "<group>"; };
+		441971941DAF4D7700C48499 /* GADMAdNetworkConnectorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADMAdNetworkConnectorProtocol.h; sourceTree = "<group>"; };
+		441971951DAF4D7700C48499 /* GADMediationAdRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADMediationAdRequest.h; sourceTree = "<group>"; };
+		441971961DAF4D7700C48499 /* GADMEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADMEnums.h; sourceTree = "<group>"; };
+		441971971DAF4D7700C48499 /* GADMRewardBasedVideoAdNetworkAdapterProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADMRewardBasedVideoAdNetworkAdapterProtocol.h; sourceTree = "<group>"; };
+		441971981DAF4D7700C48499 /* GADMRewardBasedVideoAdNetworkConnectorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADMRewardBasedVideoAdNetworkConnectorProtocol.h; sourceTree = "<group>"; };
+		441971991DAF4D7700C48499 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		44E3F8AA1D5D4C4A00669B97 /* FacebookBannerCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookBannerCustomEvent.h; sourceTree = "<group>"; };
 		44E3F8AB1D5D4C4A00669B97 /* FacebookBannerCustomEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookBannerCustomEvent.m; sourceTree = "<group>"; };
 		44E3F8AC1D5D4C4A00669B97 /* FacebookInterstitialCustomEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookInterstitialCustomEvent.h; sourceTree = "<group>"; };
@@ -635,7 +609,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				442031F61D52787C00682669 /* GoogleMobileAds.framework in Frameworks */,
+				4419719A1DAF4D7700C48499 /* GoogleMobileAds.framework in Frameworks */,
 				44E3F8B81D5D4CE300669B97 /* FBAudienceNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -646,10 +620,9 @@
 		26E462A91B8693F600D2C50F = {
 			isa = PBXGroup;
 			children = (
+				441971901DAF4CB000C48499 /* Google SDK */,
 				44E3F8A91D5D4B5000669B97 /* Facebook */,
-				44F35D4C1C7D4DC9005F7513 /* Google SDK */,
 				26E462E81B87BFC700D2C50F /* MoPub Adapter */,
-				26E462E71B87BFC100D2C50F /* Sample SDK */,
 				26E462B41B8693F600D2C50F /* MediationExample */,
 				26E462B31B8693F600D2C50F /* Products */,
 			);
@@ -685,30 +658,6 @@
 			path = MediationAdapterExample;
 			sourceTree = "<group>";
 		};
-		26E462E71B87BFC100D2C50F /* Sample SDK */ = {
-			isa = PBXGroup;
-			children = (
-				26E462F21B87BFF800D2C50F /* SampleAdRequest.h */,
-				26E462F31B87BFF800D2C50F /* SampleAdRequest.m */,
-				26E462F41B87BFF800D2C50F /* SampleBanner.h */,
-				26E462F51B87BFF800D2C50F /* SampleBanner.m */,
-				26E462F61B87BFF800D2C50F /* SampleBannerAdDelegate.h */,
-				26E462F71B87BFF800D2C50F /* SampleInterstitial.h */,
-				26E462F81B87BFF800D2C50F /* SampleInterstitial.m */,
-				26E462F91B87BFF800D2C50F /* SampleInterstitialAdDelegate.h */,
-				26E463041B8911AD00D2C50F /* SampleNativeAdLoader.h */,
-				26E463051B8911AD00D2C50F /* SampleNativeAdLoader.m */,
-				26E463071B89163200D2C50F /* SampleNativeAdLoaderDelegate.h */,
-				26E463081B8916FA00D2C50F /* SampleNativeContentAd.h */,
-				26E463091B8916FA00D2C50F /* SampleNativeContentAd.m */,
-				26E4630B1B89170900D2C50F /* SampleNativeAppInstallAd.h */,
-				26E4630C1B89170900D2C50F /* SampleNativeAppInstallAd.m */,
-				26E4630E1B8AEA2800D2C50F /* SampleNativeAdRequest.h */,
-				26E4630F1B8AEA2800D2C50F /* SampleNativeAdRequest.m */,
-			);
-			name = "Sample SDK";
-			sourceTree = "<group>";
-		};
 		26E462E81B87BFC700D2C50F /* MoPub Adapter */ = {
 			isa = PBXGroup;
 			children = (
@@ -722,16 +671,25 @@
 			name = "MoPub Adapter";
 			sourceTree = "<group>";
 		};
-		442031ED1D52787C00682669 /* Mediation Adapters */ = {
+		441971901DAF4CB000C48499 /* Google SDK */ = {
 			isa = PBXGroup;
 			children = (
-				442031EE1D52787C00682669 /* GADMAdNetworkAdapterProtocol.h */,
-				442031EF1D52787C00682669 /* GADMAdNetworkConnectorProtocol.h */,
-				442031F01D52787C00682669 /* GADMediationAdRequest.h */,
-				442031F11D52787C00682669 /* GADMEnums.h */,
-				442031F21D52787C00682669 /* GADMRewardBasedVideoAdNetworkAdapterProtocol.h */,
-				442031F31D52787C00682669 /* GADMRewardBasedVideoAdNetworkConnectorProtocol.h */,
-				442031F41D52787C00682669 /* README.txt */,
+				441971911DAF4D7700C48499 /* GoogleMobileAds.framework */,
+				441971921DAF4D7700C48499 /* Mediation Adapters */,
+			);
+			name = "Google SDK";
+			sourceTree = "<group>";
+		};
+		441971921DAF4D7700C48499 /* Mediation Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				441971931DAF4D7700C48499 /* GADMAdNetworkAdapterProtocol.h */,
+				441971941DAF4D7700C48499 /* GADMAdNetworkConnectorProtocol.h */,
+				441971951DAF4D7700C48499 /* GADMediationAdRequest.h */,
+				441971961DAF4D7700C48499 /* GADMEnums.h */,
+				441971971DAF4D7700C48499 /* GADMRewardBasedVideoAdNetworkAdapterProtocol.h */,
+				441971981DAF4D7700C48499 /* GADMRewardBasedVideoAdNetworkConnectorProtocol.h */,
+				441971991DAF4D7700C48499 /* README.txt */,
 			);
 			path = "Mediation Adapters";
 			sourceTree = "<group>";
@@ -1284,16 +1242,6 @@
 			path = Internal;
 			sourceTree = "<group>";
 		};
-		44F35D4C1C7D4DC9005F7513 /* Google SDK */ = {
-			isa = PBXGroup;
-			children = (
-				442031EC1D52787C00682669 /* GoogleMobileAds.framework */,
-				442031ED1D52787C00682669 /* Mediation Adapters */,
-				442031F51D52787C00682669 /* README.txt */,
-			);
-			name = "Google SDK";
-			sourceTree = "<group>";
-		};
 		4A8B037B1C28702D0052A060 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -1370,7 +1318,7 @@
 				44F35D371C7D4B97005F7513 /* MPCloseButtonX@2x.png in Resources */,
 				44F35D341C7D4B97005F7513 /* MPCloseBtn@2x.png in Resources */,
 				44F35D3F1C7D4B97005F7513 /* MPPlayBtn.png in Resources */,
-				442031F71D52787C00682669 /* README.txt in Resources */,
+				4419719B1DAF4D7700C48499 /* README.txt in Resources */,
 				44F35D421C7D4B97005F7513 /* MPUnmutedBtn@1x.png in Resources */,
 				44F35D431C7D4B97005F7513 /* MPUnmutedBtn@2x.png in Resources */,
 				44F35D3D1C7D4B97005F7513 /* MPMutedBtn@2x.png in Resources */,
@@ -1386,7 +1334,6 @@
 				44F35D401C7D4B97005F7513 /* MPPlayBtn@2x.png in Resources */,
 				44F35D3C1C7D4B97005F7513 /* MPMutedBtn@1x.png in Resources */,
 				4A8B03691C286F5C0052A060 /* ExampleNativeContentAdView.xib in Resources */,
-				442031F81D52787C00682669 /* README.txt in Resources */,
 				44F35D331C7D4B97005F7513 /* MPCloseBtn.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1400,7 +1347,6 @@
 			files = (
 				44F35CDC1C7D4B97005F7513 /* UIWebView+MPAdditions.m in Sources */,
 				44F35D121C7D4B97005F7513 /* MPAdPositioning.m in Sources */,
-				26E4630D1B89170900D2C50F /* SampleNativeAppInstallAd.m in Sources */,
 				44F35CAA1C7D4B97005F7513 /* MPFacebookKeywordProvider.m in Sources */,
 				44F35CB21C7D4B97005F7513 /* MPLogEvent+NativeVideo.m in Sources */,
 				44F35D221C7D4B97005F7513 /* MPStreamAdPlacementData.m in Sources */,
@@ -1437,11 +1383,9 @@
 				44F35CF81C7D4B97005F7513 /* MPVASTTrackingEvent.m in Sources */,
 				44F35CC81C7D4B97005F7513 /* MPMRAIDInterstitialViewController.m in Sources */,
 				44F35D251C7D4B97005F7513 /* MOPUBActivityIndicatorView.m in Sources */,
-				26E463101B8AEA2800D2C50F /* SampleNativeAdRequest.m in Sources */,
 				44F35D481C7D4B97005F7513 /* MPRewardedVideo.m in Sources */,
 				44F35CCF1C7D4B97005F7513 /* MRError.m in Sources */,
 				44F35D2E1C7D4B97005F7513 /* MOPUBPlayerView.m in Sources */,
-				26E462FB1B87BFF800D2C50F /* SampleBanner.m in Sources */,
 				44F35CFF1C7D4B97005F7513 /* MPInterstitialAdController.m in Sources */,
 				44F35D1D1C7D4B97005F7513 /* MPNativeAdSource.m in Sources */,
 				44F35CC01C7D4B97005F7513 /* MPInterstitialCustomEventAdapter.m in Sources */,
@@ -1458,7 +1402,6 @@
 				44F35CD61C7D4B97005F7513 /* NSHTTPURLResponse+MPAdditions.m in Sources */,
 				44F35D0A1C7D4B97005F7513 /* MPNativeAdUtils.m in Sources */,
 				44F35CE51C7D4B97005F7513 /* MPReachability.m in Sources */,
-				26E462FC1B87BFF800D2C50F /* SampleInterstitial.m in Sources */,
 				44F35CEA1C7D4B97005F7513 /* MPVASTAd.m in Sources */,
 				44F35C9B1C7D4B97005F7513 /* MPBannerCustomEventAdapter.m in Sources */,
 				44F35D191C7D4B97005F7513 /* MPNativeAdRendererConfiguration.m in Sources */,
@@ -1471,7 +1414,6 @@
 				4A93FA581C286D8F00479579 /* ExampleNativeContentAdView.m in Sources */,
 				44F35D2C1C7D4B97005F7513 /* MOPUBNativeVideoImpressionAgent.m in Sources */,
 				4A0575BE1C287FFB0085EBE0 /* main.m in Sources */,
-				26E462FA1B87BFF800D2C50F /* SampleAdRequest.m in Sources */,
 				44F35CB71C7D4B97005F7513 /* MPQRunLoopOperation.m in Sources */,
 				44F35CDD1C7D4B97005F7513 /* MPAnalyticsTracker.m in Sources */,
 				26D0565A1BBC859D002286F4 /* MoPubAdapterMediatedNativeAd.m in Sources */,
@@ -1492,7 +1434,6 @@
 				44F35C9E1C7D4B97005F7513 /* MPAdAlertManager.m in Sources */,
 				44F35CC31C7D4B97005F7513 /* MPInstanceProvider.m in Sources */,
 				44F35D4A1C7D4B97005F7513 /* MPRewardedVideoError.m in Sources */,
-				26E463061B8911AD00D2C50F /* SampleNativeAdLoader.m in Sources */,
 				44F35CB61C7D4B97005F7513 /* MPNetworkManager.m in Sources */,
 				44F35CA31C7D4B97005F7513 /* MPAdConfiguration.m in Sources */,
 				44F35D0F1C7D4B97005F7513 /* MPStaticNativeAdImpressionTimer.m in Sources */,
@@ -1547,7 +1488,6 @@
 				44F35CD21C7D4B97005F7513 /* MRNativeCommandHandler.m in Sources */,
 				44F35D131C7D4B97005F7513 /* MPClientAdPositioning.m in Sources */,
 				44F35CC41C7D4B97005F7513 /* MPVASTTracking.m in Sources */,
-				26E4630A1B8916FA00D2C50F /* SampleNativeContentAd.m in Sources */,
 				44E3F8B31D5D4C4A00669B97 /* FacebookInterstitialCustomEvent.m in Sources */,
 				44F35CAD1C7D4B97005F7513 /* MPProgressOverlayView.m in Sources */,
 				44F35CC21C7D4B97005F7513 /* MPCoreInstanceProvider.m in Sources */,
