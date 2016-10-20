@@ -297,15 +297,15 @@ static NSString *const kAdapterErrorDomain = @"com.mopub.mobileads.MoPubAdapter"
 }
 
 - (void)willPresentModalForNativeAd:(MPNativeAd *)nativeAd {
-    return [self.connector adapterWillPresentFullScreenModal:self];
+    [GADMediatedNativeAdNotificationSource mediatedNativeAdWillPresentScreen:self.mediatedAd];
 }
 
 - (void)didDismissModalForNativeAd:(MPNativeAd *)nativeAd {
-    return [self.connector adapterDidDismissFullScreenModal:self];
+   [GADMediatedNativeAdNotificationSource mediatedNativeAdDidDismissScreen:self.mediatedAd];
 }
 
 - (void)willLeaveApplicationFromNativeAd:(MPNativeAd *)nativeAd {
-    return [self.connector adapterWillLeaveApplication:self];
+   [GADMediatedNativeAdNotificationSource mediatedNativeAdWillLeaveApplication: self.mediatedAd];
 }
 
 @end

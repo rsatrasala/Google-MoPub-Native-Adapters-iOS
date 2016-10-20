@@ -9,6 +9,7 @@
 #import "MPAdDestinationDisplayAgent.h"
 #import "MPCoreInstanceProvider.h"
 
+
 @interface MoPubAdapterMediatedNativeAd () <GADMediatedNativeAdDelegate, MPAdDestinationDisplayAgentDelegate>
 
 @property(nonatomic, copy) NSArray *mappedImages;
@@ -19,7 +20,7 @@
 @property (nonatomic) MPAdDestinationDisplayAgent *displayDestinationAgent;
 @property (nonatomic) UIViewController *baseViewController;
 @property (nonatomic) GADNativeAdViewAdOptions *nativeAdViewOptions;
-
+@property (nonatomic) UIImageView *privacyIconImageView;
 @end
 
 @implementation MoPubAdapterMediatedNativeAd
@@ -114,36 +115,38 @@
 {
 
     UIImage *privacyIconImage = [UIImage imageNamed:kDAAIconImageName];
-    UIImageView *privacyIconImageView = [[UIImageView alloc] initWithImage:privacyIconImage];
-    privacyIconImageView.frame = CGRectMake(view.bounds.size.width-40, 10, 25, 25);
+    
     self.baseViewController = viewController;
     
     [_nativeAd performSelector:@selector(willAttachToView:) withObject:view];
     
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(privacyIconTapped)];
-    privacyIconImageView.userInteractionEnabled = YES;
-    [privacyIconImageView addGestureRecognizer:tapRecognizer];
+    self.privacyIconImageView.userInteractionEnabled = YES;
+    [self.privacyIconImageView addGestureRecognizer:tapRecognizer];
+    
+    self.privacyIconImageView = [[UIImageView alloc] initWithImage:privacyIconImage];
     
     switch (_nativeAdViewOptions.preferredAdChoicesPosition) {
         case GADAdChoicesPositionTopLeftCorner:
-            view.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin;
+            self.privacyIconImageView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin;
             break;
         case GADAdChoicesPositionBottomLeftCorner:
-            view.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin;
+            self.privacyIconImageView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin;
             break;
         case GADAdChoicesPositionBottomRightCorner:
-            view.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin;
+            self.privacyIconImageView.autoresizingMask =UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin;
             break;
         case GADAdChoicesPositionTopRightCorner:
-            view.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleRightMargin;
+            self.privacyIconImageView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleRightMargin;
+            break;
         default:
-            view.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleRightMargin;
+            self.privacyIconImageView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleRightMargin;
             break;
     }
-
-    [view addSubview:privacyIconImageView];
-
     
+    [view addSubview:self.privacyIconImageView];
+
+ 
 }
 
 - (void)mediatedNativeAd:(id<GADMediatedNativeAd>)mediatedNativeAd
@@ -157,7 +160,9 @@
 }
 
 - (void)mediatedNativeAd:(id<GADMediatedNativeAd>)mediatedNativeAd didUntrackView:(UIView *)view {
-    
+    if(self.privacyIconImageView) {
+        [self.privacyIconImageView removeFromSuperview];
+    }
 }
 
 #pragma mark - MPAdDestinationDisplayAgentDelegate
@@ -169,17 +174,17 @@
 
 - (void)displayAgentDidDismissModal
 {
-    
+    [GADMediatedNativeAdNotificationSource mediatedNativeAdDidDismissScreen:self];
 }
 
 - (void)displayAgentWillPresentModal
 {
-    
+    [GADMediatedNativeAdNotificationSource mediatedNativeAdWillPresentScreen:self];
 }
 
 - (void)displayAgentWillLeaveApplication
 {
-    
+    [GADMediatedNativeAdNotificationSource mediatedNativeAdWillLeaveApplication:self];
 }
 
 
